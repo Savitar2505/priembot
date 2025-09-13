@@ -3,11 +3,11 @@ import { MongooseModuleOptions } from '@nestjs/mongoose';
 export const getMongoConfig = async (): Promise<MongooseModuleOptions> => {
 
     return {
-        uri: 'mongodb://mongodb:27017/mydb', // Без credentials в URI
+        uri: 'mongodb://mongodb:27017/mydb',
         dbName: 'mydb',
         auth: {
             username: 'admin',
-            password: 'admin'
+            password: 'admin',
         },
         authSource: 'admin',
         directConnection: true,
