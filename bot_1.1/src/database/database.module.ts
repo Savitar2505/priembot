@@ -5,7 +5,7 @@ import { getMongoConfig } from '../configs/mongo.config';
 @Module({
   imports: [
     MongooseModule.forRootAsync({
-      useFactory: getMongoConfig,
+      useFactory: () => getMongoConfig(), // Исправляем вызов
     }),
   ],
 })
