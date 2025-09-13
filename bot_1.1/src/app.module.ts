@@ -9,10 +9,10 @@ import {RequisiteModule} from "./requisite/requisite.module";
 @Module({
 
   imports: [
+    DatabaseModule,
     ConfigModule.forRoot({isGlobal: true,
       envFilePath: '.env'
     }),
-    DatabaseModule,
     UserModule,
     GroupModule,
     RequisiteModule,
