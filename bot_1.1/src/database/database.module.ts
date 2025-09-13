@@ -1,11 +1,12 @@
 import { MongooseModule } from '@nestjs/mongoose';
 import { Module } from '@nestjs/common';
-import { getMongoConfig } from '../configs/mongo.config';
 
 @Module({
   imports: [
-    MongooseModule.forRootAsync({
-      useFactory: () => getMongoConfig(), // Исправляем вызов
+    MongooseModule.forRoot('mongodb://admin:admin@mongodb:27017/mydb?authSource=admin', {
+      dbName: 'mydb',
+      connectTimeoutMS: 5000,
+      serverSelectionTimeoutMS: 5000,
     }),
   ],
 })
